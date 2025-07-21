@@ -136,10 +136,11 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
     await connectDB();
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`🚀 DXZ Data Manager Server running on port ${PORT}`);
       console.log(`📊 Environment: ${process.env.NODE_ENV}`);
       console.log(`🌐 Frontend URL: ${process.env.FRONTEND_URL}`);
+      console.log(`🌍 Server accessible on all interfaces (0.0.0.0:${PORT})`);
     });
   } catch (error) {
     console.error('Failed to start server:', error);
